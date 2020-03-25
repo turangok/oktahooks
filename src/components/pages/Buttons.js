@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withAuth } from '@okta/okta-react';
 
-export default withAuth(class Home extends Component {
+export default withAuth(class Buttons extends Component {
   constructor(props) {
     super(props);
     this.state = { authenticated: null };
@@ -12,13 +12,17 @@ export default withAuth(class Home extends Component {
   }
 
   async checkAuthentication() {
+    console.log('tg..class:Buttons-func:checkAuthentication')
     const authenticated = await this.props.auth.isAuthenticated();
     if (authenticated !== this.state.authenticated) {
       this.setState({ authenticated });
     }
+    console.log('tg..class:Buttons-func:checkAuthentication auth: ',authenticated)
+
   }
 
   componentDidUpdate() {
+    console.log('tg..class:Buttons-func:componentDidUpdate')
     this.checkAuthentication();
   }
 

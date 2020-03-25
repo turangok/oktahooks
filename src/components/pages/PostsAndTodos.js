@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import ResourceListClass from './ResourceListClass';
+//import ResourceListClass from './ResourceListClass';
 import ResourceListHooks from './ResourceListHooks';
+import ResourceListClass from './ResourceListClass';
 import UserList from './UserList';
 
 let PostsAndTodos = () => {
     const [resource, setResource] = useState('posts');
-        
+    console.log('tg..PARENT:PostsAndTodos')
+
         return (
         <div>
             <button onClick={() => setResource('posts')}>Posts</button>
